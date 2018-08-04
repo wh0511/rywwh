@@ -1,0 +1,52 @@
+.pyg_content {
+  height: 100%; }
+  .pyg_content .pyg_nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden; }
+    .pyg_content .pyg_nav > a {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      width: 25%;
+      padding: 10px; }
+      .pyg_content .pyg_nav > a > img {
+        width: 100%; }
+  .pyg_content .pyg_list {
+    padding: 5px; }
+    .pyg_content .pyg_list .list_content ul {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      padding: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .pyg_content .pyg_list .list_content ul li {
+        width: 49%;
+        background-color: #fff;
+        padding: 0 5px;
+        margin-bottom: 3px; }
+        .pyg_content .pyg_list .list_content ul li a img {
+          width: 100%; }
+        .pyg_content .pyg_list .list_content ul li a .list_content_details {
+          overflow: hidden;
+          height: 44px;
+          width: 100%;
+          font-size: 13px;
+          color: #000; }
+        .pyg_content .pyg_list .list_content ul li a .list_content_price {
+          font-size: 20px;
+          color: red; }
+        .pyg_content .pyg_list .list_content ul li .list_content_similarity {
+          text-align: center;
+          font-size: 13px; }
+          .pyg_content .pyg_list .list_content ul li .list_content_similarity button {
+            padding: 3px 35px;
+            width: 120px; }

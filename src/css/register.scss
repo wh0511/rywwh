@@ -1,0 +1,31 @@
+body{
+    background-color:#efeff4;
+}
+.content_cen{
+    margin: 10px;
+    #mui-input{
+        position: relative;
+        
+        #mui-btn{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: auto;
+        }
+    }
+  
+    .tools_row{
+        // padding: 10px 0;
+        padding-top: 10px;
+        background-color: #efeff4;
+        display: flex;
+        height: auto;
+       .mui-btn{
+         flex: 1;
+         height: 50px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+       }
+      }
+}

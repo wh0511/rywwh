@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include("head.html",{"title":"分类","pages":"classify"})
+</head>
+<body>
+    @@include("header.html")
+    <div class="content">
+        <div class="content_left">
+            <ul class="pyg_menu">
+                
+            </ul>
+        </div>
+        <div class="content_right">
+            <ul class="good_list">
+            
+            </ul>
+        </div>
+    </div>
+
+    @@include("footer.html")
+</body>
+<!-- 模板引擎 -->
+<!-- 左侧 -->
+<script type="text/html" id="leftTpl">
+{{each arr value index}}
+{{if index==0}}
+<li data-index="0" class="active">{{value.cat_name}}</li>
+{{/if}}
+{{if index != 0}}
+<li  data-index="{{index}}" >{{value.cat_name}}</li>
+{{/if}}
+{{/each}}
+</script>
+<!-- 右侧 -->
+<script type="text/html" id="rigthTpl">
+    {{each arr value index}}
+    <li>
+        <div class="item_title">
+            <span>{{value.cat_name}}</span>
+            <span></span>
+        </div>
+        <div class="item_content">
+           {{each value.children val ind}}
+            <a href="productList.html?cid={{val.cat_id}}">
+                <img src="{{$imports.BaseURL}}{{val.cat_icon}}" alt="">
+                <div class="cat_name3">{{val.cat_name}}</div>
+            </a>
+           {{/each}}
+        </div>
+    </li>    
+    {{/each}}
+</script>
+
+<!-- 模板引擎 -->
+    @@include("script.html",{"pages":"classify"})
+
+</html>

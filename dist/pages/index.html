@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <!-- <link rel="stylesheet" href="../components/header.html"> -->
+    <link rel="stylesheet" href="/lib/mui/css/mui.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/commonality.css">
+    <link rel="stylesheet" href="/css/index.css">
+    
+</head>
+<body>
+    <header class="pyg_header">
+    <div class="mui-input-row mui-search">
+        <input type="search" class="mui-input-clear" placeholder="">
+    </div>
+</header>
+
+
+    <!-- 头部 -->
+    
+    <div class="pyg_content">
+        <!-- 轮播图 -->
+        <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                  <!--支持循环，需要重复图片节点-->
+                <!-- <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="http://p6lmyfkof.bkt.clouddn.com/banner3.png" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="http://p6lmyfkof.bkt.clouddn.com/banner1.png" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="http://p6lmyfkof.bkt.clouddn.com/banner2.png" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="http://p6lmyfkof.bkt.clouddn.com/banner3.png" /></a></div> -->
+                  <!--支持循环，需要重复图片节点-->
+                <!-- <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="http://p6lmyfkof.bkt.clouddn.com/banner1.png" /></a></div> -->
+            </div>
+            <div class="mui-slider-indicator">
+                <!-- <div class="mui-indicator mui-active "></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div> -->
+            </div>
+        </div>
+        <!-- 分类导航 -->
+        <div class="pyg_nav">
+            <!-- <a href="javascript:;">
+                <img src="http://p6lmyfkof.bkt.clouddn.com/icon_index_nav_4@2x.png" alt="">
+            </a>
+            <a href="javascript:;">
+                <img src="http://p6lmyfkof.bkt.clouddn.com/icon_index_nav_3@2x.png" alt="">
+            </a>
+            <a href="javascript:;">
+                <img src="http://p6lmyfkof.bkt.clouddn.com/icon_index_nav_2@2x.png" alt="">
+            </a>
+            <a href="javascript:;">
+                <img src="http://p6lmyfkof.bkt.clouddn.com/icon_index_nav_1@2x.png" alt="">
+            </a> -->
+        </div>
+        <!-- 商品导航 -->
+        <div class="pyg_list">
+            <!-- 省钱 -->
+            <!-- <div class="list_title">
+                <img src="http://image4.suning.cn/uimg/cms/img/149559219946350066.png" alt="">
+            </div> -->
+            <!-- 商品内容 -->
+            <div class="list_content">
+                <ul>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    <!-- 尾部 -->
+    <footer class="pyg_footer">
+    <a href="/pages/index.html">
+        <span class="fa fa-home fa-fw"></span>
+        <div class="pyg_footer_sisz">首页</div>
+    </a>
+    <a href="/pages/classify.html">
+        <span class="fa fa-list-ul"></span>
+        <div class="pyg_footer_sisz">分类</div>
+    </a>
+    <a href="javascript:;">
+        <span class="fa fa-shopping-cart"></span>
+        <div class="pyg_footer_sisz">购物车</div>
+    </a>
+    <a href="/pages/register.html">
+        <span class="fa fa-user-circle-o"></span>
+        <div class="pyg_footer_sisz">我的</div>
+    </a>
+</footer>
+    
+</body>
+<!-- 模板 -->
+<!-- 轮播图 -->
+<script id="swiperData" type="text/html"> 
+        <!-- 支持循环，需要重复图片节点 -->
+      <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{arr[arr.length - 1].image_src}}" /></a></div>
+      {{each arr value index}}
+      <div class="mui-slider-item"><a href="#"><img src="{{value.image_src}}" /></a></div>
+      {{/each}}
+        <!-- 支持循环，需要重复图片节点 -->
+      <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{arr[0].image_src}}" /></a></div>
+</script>
+<!-- 下标 -->
+<script id="swiperDataIndex" type="text/html">
+{{each list value}}
+    <div class="mui-indicator mui-active "></div>
+{{/each}}
+</script>
+<!-- 分类导航 -->
+<script id="catItems" type="text/html">
+    {{each arr value}}
+        <a href="{{value.navigator_url}}">
+            <img src="{{value.image_src}}" alt="">
+        </a>
+
+    {{/each}}
+</script>
+<!-- 商品导航 -->
+
+<script id="goodsList" type="text/html">
+{{ each arr value}}
+    <div class="list_title">
+        <img src="{{value.group_img}}" alt="">
+    </div>
+    <div class="list_content">
+        <ul>
+            {{ each value.goods list}}
+            <li>
+                <a href="/pages/goodsDetail.html?goods_id={{list.goods_id}}">
+                    <img src="{{list.goods_big_logo}}" alt="">
+                    <div class="list_content_details">{{list.goods_name}}</div>
+                    <div class="list_content_price">¥{{list.goods_price}}</div>
+                </a>
+                <div class="list_content_similarity">    
+                    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">找相似</button>
+                </div>  
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+{{/each}}
+
+</script>
+<!-- 模板  -->
+<script src="../lib/jquery.js"></script>
+<script src="../lib/mui/js/mui.min.js"></script>
+<script src="../lib/arttemplate/template-web.js"></script>
+<script src="../lib/axios/axios.js"></script>
+<script src="../lib/zepto/zepto.js"></script>
+<script src="../lib/iscroll/iscroll.js"></script>
+<script src="../js/commonality.js"></script>
+<script src="../js/index.js"></script>
+</html>

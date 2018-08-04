@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include("head.html",{"title":"注册","pages":"register"})
+</head>
+<body>
+    <div class="herder">
+        @@include("nav_header.html",{"title":"注册"})
+    </div>
+
+    <form class="mui-input-group content_cen">
+        <div class="mui-input-row">
+            <label>手机</label>
+        <input type="text"  name="mobile" value="13645767654" class="mui-input-clear" placeholder="请输入手机号码">
+        </div>
+        <div class="mui-input-row" id="mui-input">
+            <label>验证码</label>
+        <input type="text"  name="code" class="mui-input-clear" placeholder="请输入4位验证码">
+        <button type="button" class="mui-btn mui-btn-primary"id="mui-btn" >获取验证码</button>
+        </div>
+        <div class="mui-input-row" >
+            <label>邮箱</label>
+        <input type="text" name="email" class="mui-input-clear" placeholder="请输入邮箱">
+        </div>
+        <div class="mui-input-row">
+            <label>密码</label>
+            <input type="password"  name="pwd" class="mui-input-password" placeholder="请输入密码">
+        </div>
+        <div class="mui-input-row" >
+            <label>确认密码</label>
+            <input type="password" name="pwd2" class="mui-input-password" placeholder="请确认密码">
+        </div>
+        <div class="mui-input-row mui-radio">
+            <label>男</label>
+            <input name="gender" type="radio" checked="" value="男">
+        </div>
+        <div class="mui-input-row mui-radio">
+            <label>女</label>
+            <input  name="gender" type="radio" value="女">
+        </div>
+        <div class="mui-button-row tools_row">
+            <a href="javascript:;" class="mui-btn mui-btn-outlined mui-btn-primary" >返回</a>
+            <a href="javascript:;" id="registerBtn" class="mui-btn mui-btn-primary" >注册</a>
+        </div>
+    </form>
+
+    @@include("footer.html")
+</body>
+    @@include("script.html",{"pages":"register"})
+</html>

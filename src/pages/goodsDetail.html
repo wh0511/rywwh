@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("head.html",{"title":"商品详情","pages":"goodsDetail"})
+</head>
+
+<body>
+    <div class="herder">
+        @@include("nav_header.html",{"title":"商品详情"})
+    </div>
+    <div class="content">
+        <!-- 轮播图 -->
+        <div class="py_content"></div>
+        <!-- 中心 -->
+        
+      <!--   <div class="content_center">
+                <div class="size">
+                   {{arr.goods_name}}
+                </div>
+                <div class="price">￥{{arr.goods_price}}</div>
+                <div class="con_cen_list">
+                    <ul>
+                        <li>
+                            <span class="list_xuan">已选</span>
+                            <span class="list_zhuantai">白色</span>
+                        </li>
+                        <li>
+                            <span class="list_xuan">促销</span>
+                            <span class="list_zhuantai">是</span>
+                        </li>
+                        <li>
+                            <span class="list_xuan">送至</span>
+                            <span class="list_zhuantai">上海市</span>
+                        </li>
+                        <li>
+                            <span class="list_xuan">运费</span>
+                            <span class="list_zhuantai">免运费</span>
+                        </li>
+                    </ul>
+        </div> -->
+
+        <div class="content_center">
+            <div class="mui-content switchBar">
+                <!-- <div> -->
+                <div id="segmentedControl" class="mui-segmented-control">
+                    <a class="mui-control-item" href="#item1">图文详情</a>
+                    <a class="mui-control-item" href="#item2">规格参数</a>
+                </div>
+                <!-- </div> -->
+                <div>
+                    <div id="item1" class="mui-control-content mui-active">
+                        <!-- <div class="item1_cont"></div> -->
+                        <!-- dfghjklfgnm -->
+                    </div>
+                    <div id="item2" class="mui-control-content it2">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li>
+                <a href="javascript:;">
+                    <span class="fa fa-weixin"></span>
+                    <div>微信</div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="fa fa-phone"></span>
+                    <div>客服</div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" class="buy">
+                    立即购买
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" class="catr">
+                    加入购物车
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+<!-- 模板 -->
+<script type="text/html" id="swapTpl">
+    <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <div class="mui-slider-item"><a href="#"><img src="{{arr.pics[4].pics_mid_url}}"/></a></div>      
+                {{each arr.pics value index}}
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="{{value.pics_mid_url}}" />
+                    </a>
+                </div>
+                {{/each}}
+                <div class="mui-slider-item"><a href="#"><img src="{{arr.pics[0].pics_mid_url}}"/></a></div>
+            </div>
+            <div class="mui-slider-indicator">
+                {{each arr.pics value index}}
+                {{if index==0}}
+                <div class="mui-indicator mui-active"></div>
+                {{/if}}
+                {{if index!=0}}
+                <div class="mui-indicator"></div>
+                {{/if}}
+               {{/each}}
+            </div>
+    </div>
+    <div class="content_center">
+            <div class="size">
+               {{arr.goods_name}}
+            </div>
+            <div class="price">￥{{arr.goods_price}}</div>
+            <div class="con_cen_list">
+                <ul>
+                    <li>
+                        <span class="list_xuan">已选</span>
+                        <span class="list_zhuantai">白色</span>
+                    </li>
+                    <li>
+                        <span class="list_xuan">促销</span>
+                        <span class="list_zhuantai">是</span>
+                    </li>
+                    <li>
+                        <span class="list_xuan">送至</span>
+                        <span class="list_zhuantai">上海市</span>
+                    </li>
+                    <li>
+                        <span class="list_xuan">运费</span>
+                        <span class="list_zhuantai">免运费</span>
+                    </li>
+                </ul>
+            </div>
+
+</script>
+
+<script type="text/html" id="teepTpl">
+
+   <div class="attr">
+       {{each list.attrs value }}
+        <div class="mui_titelt">{{value.attr_name.split("-")[0]}}</div>
+      <div class="mui_con">
+        <div class="mui_con_til">{{value.attr_name.split("-")[1]}}</div>
+        <div class="mui_con_con">{{value.attr_value}}</div>
+       </div>
+       {{/each}}
+   </div>
+
+</script>
+<!-- 模板 -->
+
+@@include("script.html",{"pages":"goodsDetail"})
+
+</html>

@@ -1,0 +1,78 @@
+@media screen and (width:640px){
+    html{
+        font-size: 100px;
+    }
+}
+
+
+body{
+    // background-color:pink;
+}
+.content{
+    display: flex;
+    height: 100%;
+}
+.content_left{
+    overflow: hidden;
+    width: 1rem;
+    ul{
+        li{
+            font-size: 0.16rem;
+            padding: .1rem .05rem;
+            text-align: center;
+        }
+    }
+    .active{
+        background-color: #fff;
+        border-left: 3px solid #0094ff;
+    }
+
+}
+.content_right{
+    overflow: hidden;
+    flex: 1;
+    background-color: #fff;
+    ul{
+        // display: flex;
+        padding: 5px 15px;
+        
+        li{
+            opacity: 0;
+            .item_title{
+                display: flex;
+                span:nth-child(1){
+                    color: #0094ff;
+                    font-size: .14rem;
+                    padding: .05rem;
+                    padding-right: .1rem;
+                }
+                span:nth-child(2){
+                    flex: 1;
+                    border-top: 1px solid #000;
+                    align-self: center;
+                }
+            }
+            .item_content{
+                display: flex;
+                flex-wrap: wrap;
+               a{
+                   width: 33.333%;
+                   text-align: center;
+                   color: #000;
+                   
+                // 解决图片加载挤压问题
+                   overflow: hidden;
+                   height: 0;
+                //    百分比的值是相对于父元素的宽度
+                   padding-bottom: 35%;
+                   img{
+                       width: 70%;
+                   }
+                   .cat_name3{
+                    font-size: .14rem;
+                   }
+               }
+            }
+        }
+    }
+}

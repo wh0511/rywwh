@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情</title>
+    <!-- <link rel="stylesheet" href="../components/header.html"> -->
+    <link rel="stylesheet" href="/lib/mui/css/mui.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/commonality.css">
+    <link rel="stylesheet" href="/css/goodsDetail.css">
+    
+</head>
+</head>
+
+<body>
+    <div class="herder">
+        <header id="nav_header" class="mui-bar mui-bar-nav">
+    <a href="javascript:;" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">商品详情</h1>
+</header>
+    </div>
+    <div class="content">
+        <!-- 轮播图 -->
+        <div class="py_content"></div>
+        <!-- 中心 -->
+        
+      <!--   <div class="content_center">
+                <div class="size">
+                   {{arr.goods_name}}
+                </div>
+                <div class="price">￥{{arr.goods_price}}</div>
+                <div class="con_cen_list">
+                    <ul>
+                        <li>
+                            <span class="list_xuan">已选</span>
+                            <span class="list_zhuantai">白色</span>
+                        </li>
+                        <li>
+                            <span class="list_xuan">促销</span>
+                            <span class="list_zhuantai">是</span>
+                        </li>
+                        <li>
+                            <span class="list_xuan">送至</span>
+                            <span class="list_zhuantai">上海市</span>
+                        </li>
+                        <li>
+                            <span class="list_xuan">运费</span>
+                            <span class="list_zhuantai">免运费</span>
+                        </li>
+                    </ul>
+        </div> -->
+
+        <div class="content_center">
+            <div class="mui-content switchBar">
+                <!-- <div> -->
+                <div id="segmentedControl" class="mui-segmented-control">
+                    <a class="mui-control-item" href="#item1">图文详情</a>
+                    <a class="mui-control-item" href="#item2">规格参数</a>
+                </div>
+                <!-- </div> -->
+                <div>
+                    <div id="item1" class="mui-control-content mui-active">
+                        <!-- <div class="item1_cont"></div> -->
+                        <!-- dfghjklfgnm -->
+                    </div>
+                    <div id="item2" class="mui-control-content it2">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li>
+                <a href="javascript:;">
+                    <span class="fa fa-weixin"></span>
+                    <div>微信</div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="fa fa-phone"></span>
+                    <div>客服</div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" class="buy">
+                    立即购买
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" class="catr">
+                    加入购物车
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+<!-- 模板 -->
+<script type="text/html" id="swapTpl">
+    <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <div class="mui-slider-item"><a href="#"><img src="{{arr.pics[4].pics_mid_url}}"/></a></div>      
+                {{each arr.pics value index}}
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="{{value.pics_mid_url}}" />
+                    </a>
+                </div>
+                {{/each}}
+                <div class="mui-slider-item"><a href="#"><img src="{{arr.pics[0].pics_mid_url}}"/></a></div>
+            </div>
+            <div class="mui-slider-indicator">
+                {{each arr.pics value index}}
+                {{if index==0}}
+                <div class="mui-indicator mui-active"></div>
+                {{/if}}
+                {{if index!=0}}
+                <div class="mui-indicator"></div>
+                {{/if}}
+               {{/each}}
+            </div>
+    </div>
+    <div class="content_center">
+            <div class="size">
+               {{arr.goods_name}}
+            </div>
+            <div class="price">￥{{arr.goods_price}}</div>
+            <div class="con_cen_list">
+                <ul>
+                    <li>
+                        <span class="list_xuan">已选</span>
+                        <span class="list_zhuantai">白色</span>
+                    </li>
+                    <li>
+                        <span class="list_xuan">促销</span>
+                        <span class="list_zhuantai">是</span>
+                    </li>
+                    <li>
+                        <span class="list_xuan">送至</span>
+                        <span class="list_zhuantai">上海市</span>
+                    </li>
+                    <li>
+                        <span class="list_xuan">运费</span>
+                        <span class="list_zhuantai">免运费</span>
+                    </li>
+                </ul>
+            </div>
+
+</script>
+
+<script type="text/html" id="teepTpl">
+
+   <div class="attr">
+       {{each list.attrs value }}
+        <div class="mui_titelt">{{value.attr_name.split("-")[0]}}</div>
+      <div class="mui_con">
+        <div class="mui_con_til">{{value.attr_name.split("-")[1]}}</div>
+        <div class="mui_con_con">{{value.attr_value}}</div>
+       </div>
+       {{/each}}
+   </div>
+
+</script>
+<!-- 模板 -->
+
+<script src="../lib/jquery.js"></script>
+<script src="../lib/mui/js/mui.min.js"></script>
+<script src="../lib/arttemplate/template-web.js"></script>
+<script src="../lib/axios/axios.js"></script>
+<script src="../lib/zepto/zepto.js"></script>
+<script src="../lib/iscroll/iscroll.js"></script>
+<script src="../js/commonality.js"></script>
+<script src="../js/goodsDetail.js"></script>
+
+</html>

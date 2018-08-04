@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分类</title>
+    <!-- <link rel="stylesheet" href="../components/header.html"> -->
+    <link rel="stylesheet" href="/lib/mui/css/mui.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/commonality.css">
+    <link rel="stylesheet" href="/css/classify.css">
+    
+</head>
+</head>
+<body>
+    <header class="pyg_header">
+    <div class="mui-input-row mui-search">
+        <input type="search" class="mui-input-clear" placeholder="">
+    </div>
+</header>
+
+
+    <div class="content">
+        <div class="content_left">
+            <ul class="pyg_menu">
+                
+            </ul>
+        </div>
+        <div class="content_right">
+            <ul class="good_list">
+            
+            </ul>
+        </div>
+    </div>
+
+    <footer class="pyg_footer">
+    <a href="/pages/index.html">
+        <span class="fa fa-home fa-fw"></span>
+        <div class="pyg_footer_sisz">首页</div>
+    </a>
+    <a href="/pages/classify.html">
+        <span class="fa fa-list-ul"></span>
+        <div class="pyg_footer_sisz">分类</div>
+    </a>
+    <a href="javascript:;">
+        <span class="fa fa-shopping-cart"></span>
+        <div class="pyg_footer_sisz">购物车</div>
+    </a>
+    <a href="/pages/register.html">
+        <span class="fa fa-user-circle-o"></span>
+        <div class="pyg_footer_sisz">我的</div>
+    </a>
+</footer>
+</body>
+<!-- 模板引擎 -->
+<!-- 左侧 -->
+<script type="text/html" id="leftTpl">
+{{each arr value index}}
+{{if index==0}}
+<li data-index="0" class="active">{{value.cat_name}}</li>
+{{/if}}
+{{if index != 0}}
+<li  data-index="{{index}}" >{{value.cat_name}}</li>
+{{/if}}
+{{/each}}
+</script>
+<!-- 右侧 -->
+<script type="text/html" id="rigthTpl">
+    {{each arr value index}}
+    <li>
+        <div class="item_title">
+            <span>{{value.cat_name}}</span>
+            <span></span>
+        </div>
+        <div class="item_content">
+           {{each value.children val ind}}
+            <a href="productList.html?cid={{val.cat_id}}">
+                <img src="{{$imports.BaseURL}}{{val.cat_icon}}" alt="">
+                <div class="cat_name3">{{val.cat_name}}</div>
+            </a>
+           {{/each}}
+        </div>
+    </li>    
+    {{/each}}
+</script>
+
+<!-- 模板引擎 -->
+    <script src="../lib/jquery.js"></script>
+<script src="../lib/mui/js/mui.min.js"></script>
+<script src="../lib/arttemplate/template-web.js"></script>
+<script src="../lib/axios/axios.js"></script>
+<script src="../lib/zepto/zepto.js"></script>
+<script src="../lib/iscroll/iscroll.js"></script>
+<script src="../js/commonality.js"></script>
+<script src="../js/classify.js"></script>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include("head.html",{"title":"商品列表","pages":"productList"})
+</head>
+<body>
+    @@include("header.html")
+    <div class="list_title">
+        <a href="javascript:;">综合</a>
+        <a href="javascript:;">销量</a>
+        <a href="javascript:;">促销</a>
+    </div>
+    <div class="list_content">
+        <!-- mui规定 -->
+        <div>
+            <ul class="list_content_ul">
+            </ul>
+        </div> 
+    </div>
+
+
+    @@include("footer.html")
+</body>
+<script type="text/html" id="listTpl">
+    {{each arr value index}}
+        <li>
+            <a href="goodsDetail.html?goods_id={{value.goods_id}}">
+                <div class="list_content_left"><img src="{{value.goods_big_logo}}" alt=""></div>
+                <div class="list_content_right">
+                    <p class="list_content_right_title">{{value.goods_name}}</p>
+                    
+                    <span class="fa fa-chevron-right "></span>
+                  
+                    <p class="list_content_right_price">￥{{value.goods_price}}</p>
+                </div>
+            </a>
+        </li>
+    {{/each}}
+</script>
+@@include("script.html",{"pages":"productList"})
+</html>

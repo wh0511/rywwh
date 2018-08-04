@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include("head.html",{"title":"登录页","pages":"login"})
+</head>
+<body>
+    <div class="herder">
+        @@include("nav_header.html",{"title":"登录"})
+    </div>
+    <div class="content_center">
+        <form class="mui-input-group content_cen">
+            <div class="mui-input-row">
+                <label>手机</label>
+            <input type="text"  name="mobile" value="13645767654" class="mui-input-clear" placeholder="请输入手机号码">
+            </div>
+            
+            <div class="mui-input-row">
+                <label>密码</label>
+                <input type="password"  name="pwd" class="mui-input-password" placeholder="请输入密码">
+            </div>
+            
+            <div class="mui-button-row tools_row">
+                <a href="javascript:;" id="loginBtn" class="mui-btn mui-btn-primary " >登陆</a>
+                <a href="javascript:;" id="registerBtn" class="mui-btn mui-btn-primary mui-btn-outlined" >快速注册</a>
+            </div>
+        </form>
+    </div>
+    
+    @@include("footer.html")
+</body>
+    @@include("script.html",{"pages":"login"})
+</html>
