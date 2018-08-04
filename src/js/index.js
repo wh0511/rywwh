@@ -10,8 +10,12 @@ $(function(){
     goodsList();
   }
 })
+
 function fn22() {
   console.log(fn222)
+}
+function wh(){
+  console.log('ya wen wo aini')
 }
 // 请求轮播图数据
 function getSwiperData(){
