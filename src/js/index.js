@@ -10,6 +10,9 @@ $(function(){
     goodsList();
   }
 })
+function wh(){
+  console.log('ya wen wo aini')
+}
 // 请求轮播图数据
 function getSwiperData(){
   axios.get("/home/swiperdata")
