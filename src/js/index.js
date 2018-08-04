@@ -10,6 +10,9 @@ $(function(){
     goodsList();
   }
 })
+function fn22() {
+  console.log(fn222)
+}
 // 请求轮播图数据
 function getSwiperData(){
   axios.get("/home/swiperdata")
